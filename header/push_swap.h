@@ -30,4 +30,8 @@ int	*ft_discretize(ft_inputs *inputs);
 //test utils
 void	ft_print_arr(int *arr, size_t len);
 
+//input validations
+int	validation_si(char *input);
+int	validation_mi(char **inputs);
+
 #endif
