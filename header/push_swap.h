@@ -31,7 +31,13 @@ int	*ft_discretize(ft_inputs *inputs);
 void	ft_print_arr(int *arr, size_t len);
 
 //input validations
-int	validation_si(char *input);
-int	validation_mi(char **inputs);
+int	validation(char **inputs);
 
+//input validation utils
+int	is_number(char *str);
+int	is_limit(char *str);
+int	is_duplicate(char **numbs, char *numb, int index);
+
+// free
+void	free_inputs(char **inputs);
 #endif

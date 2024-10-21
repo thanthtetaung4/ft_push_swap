@@ -2,8 +2,9 @@
 NAME = push_swap
 
 # Compiler and Flags
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CC = cc
+# CFLAGS = -Wall -Wextra -Werror
+CFLAGS =
 
 # Libft Paths and Files
 LIBFT_PATH = ./libft
@@ -11,9 +12,11 @@ LIBFT = ${LIBFT_PATH}/libft.a
 
 # Source Paths
 DISCRETIZE_PATH = ./src/discretization
-
+VALIDATION_PATH = ./src/input_validation
+FREE_PATH = ./src/free
 # Source Files
-SRC = ./src/main.c
+SRC = ./src/main.c $(VALIDATION_PATH)/input_validation.c $(VALIDATION_PATH)/input_validation_utils.c \
+		$(FREE_PATH)/ft_free.c
 
 # Object Files
 OBJ = $(SRC:.c=.o)
