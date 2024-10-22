@@ -6,7 +6,7 @@
 /*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 17:09:33 by taung             #+#    #+#             */
-/*   Updated: 2024/10/21 22:46:22 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/22 17:46:37 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	single_str_ops(char *inputs)
 
 void	multi_str_ops(char **inputs)
 {
+	printf("multi_val\n");
 	if (validation(inputs))
 	{
 		//call init
@@ -38,9 +39,9 @@ void	multi_str_ops(char **inputs)
 
 int	main(int argc, char *argv[])
 {
-	if (argc == 2)
-		single_str_ops(argv[1]);
-	else if (argc > 2)
+	// if (argc == 2)
+	// 	single_str_ops(argv[1]);
+	if (argc > 2)
 		multi_str_ops(argv);
 	else
 		return (-1);

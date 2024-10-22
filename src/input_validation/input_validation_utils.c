@@ -6,7 +6,7 @@
 /*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 21:32:28 by taung             #+#    #+#             */
-/*   Updated: 2024/10/21 22:24:11 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/22 21:35:23 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,17 +67,43 @@ int	is_limit(char *str)
 	return (0);
 }
 
-int	is_duplicate(char **numbs, char *numb, int index)
+int	len_numbers(char **numbers)
 {
 	int	i;
 
-	i = index + 1;
-	while (numbs[i])
+	i = 0;
+	while(numbers[i])
 	{
-		if (ft_atoi(numbs[i]) - ft_atoi(numb) == 0)
-			return (0);
 		i++;
 	}
+	return (i);
+}
+
+int	is_duplicate(char **inputs, char *numb, int index_i, int index_j)
+{
+	int		i;
+	int		j;
+	char**	numbers;
+
+	i = index_i;
+	while (inputs[i])
+	{
+		j = 0;
+		numbers = ft_split((const char*)inputs[i], ' ');
+		if (len_numbers(numbers) > 1)
+			j = index_j + 1;
+		while (numbers[j])
+		{
+			printf("inside is_duplicate numb: %s \t & j: %d\n",numbers[j],j);
+			if(ft_atoi(numbers[j]) - ft_atoi(numb) == 0)
+				return (0);
+			j++;
+		}
+		free_inputs(numbers);
+		numbers = NULL;
+		i++;
+	}
+	printf("%s \t is validated\n",numb);
 	return (1);
 }
 // #include <limits.h>
