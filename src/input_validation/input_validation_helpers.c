@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   input_validation_helpers.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: taung <taung@student.42singapore.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/20 17:09:33 by taung             #+#    #+#             */
-/*   Updated: 2024/10/24 01:02:26 by taung            ###   ########.fr       */
+/*   Created: 2024/10/23 23:56:21 by taung             #+#    #+#             */
+/*   Updated: 2024/10/24 00:06:05 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../header/push_swap.h"
+#include "../../header/push_swap.h"
 
-int	main(int argc, char *argv[])
+int	is_number_helper(char *num)
 {
-	if (argc > 1)
+	int	i;
+
+	i = 0;
+	if (num[0] == '-' || num[0] == '+')
+			i++;
+	while (num[i])
 	{
-		if (validation(argv))
-		{
-			//call init
-			//call sort
-			printf("inputs OK :)\n");
-		}
+		if(!(num[i] >= '0' && num[i] <= '9'))
+			return (0);
+		i++;
 	}
-	else
-		return (-1);
+	return (1);
+}
+
+int	is_limit_helper(char *num)
+{
+	long	numb;
+
+	numb = ft_atol((const char*)num);
+	if (numb >= -2147483648 && numb <= 2147483647)
+	{
+		return (1);
+	}
+	return (0);
 }

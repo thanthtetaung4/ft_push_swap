@@ -37,11 +37,20 @@ void	ft_print_arr(int *arr, size_t len);
 int	validation(char **inputs);
 
 //input validation utils
-int	is_number(char *str);
-int	is_limit(char *str);
-int	is_duplicate(char **inputs, char *numb, int index_i, int index_j);
+int	is_number(char *number);
+int	is_limit(char *number);
+int	is_duplicate(char **inputs);
+int	duplicate_helper(char **inputs, int i);
+// int	duplicate_checker(char **inputs, char *numb, int index_i, int index_j);
 int	len_numbers(char **numbers);
+
+//input validation helpers
+int	is_number_helper(char *num);
 
 // free
 void	free_inputs(char **inputs);
+
+//general utils
+long	ft_atol(const char *nptr);
+
 #endif
