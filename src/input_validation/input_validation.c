@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_validation.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taung <taung@student.42singapore.fr>       +#+  +:+       +#+        */
+/*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 21:32:05 by taung             #+#    #+#             */
-/*   Updated: 2024/10/24 14:52:44 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/24 18:44:29 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,9 @@ int validation_helper(char **inputs, int (*validation_func)(char *))
 			j++;
 		}
 		i++;
+		free_inputs(numbers);
+		numbers = NULL;
 	}
-	free_inputs(numbers);
 	return (1);
 }
 

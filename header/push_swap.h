@@ -4,31 +4,20 @@
 #include "../libft/libft.h"
 #include <stdio.h>
 
-typedef struct s_dict
+typedef struct s_numbers
 {
-	int *values;
-	int *keys;
-	size_t len;
-}	ft_dict;
+	int	*numbers;
+	int	len;
+}	t_numbers;
 
-typedef struct s_inputs
-{
-	int *inputs;
-	size_t len;
-}	ft_inputs;
-
-typedef struct s_vali_info
-{
-	char	**inputs;
-}	t_vali_info;
 //dictionary
-void	ft_make_dict(int *value, int *key, ft_dict *dict, size_t len);
-void	ft_print_dict(ft_dict *dict);
-int		ft_find_value(ft_dict *dict, int key);
+// void	ft_make_dict(int *value, int *key, ft_dict *dict, size_t len);
+// void	ft_print_dict(ft_dict *dict);
+// int		ft_find_value(ft_dict *dict, int key);
 
-//discretization
-int	ft_calc_key(int value, ft_inputs *inputs);
-int	*ft_discretize(ft_inputs *inputs);
+// //discretization
+// int	ft_calc_key(int value, ft_inputs *inputs);
+// int	*ft_discretize(ft_inputs *inputs);
 
 //test utils
 void	ft_print_arr(int *arr, size_t len);
@@ -42,16 +31,19 @@ int	is_limit(char *number);
 int	is_duplicate(char **inputs);
 int	duplicate_helper(char **inputs, int i);
 char **collect_numbers(char **inputs);
-// int	duplicate_checker(char **inputs, char *numb, int index_i, int index_j);
 int	len_numbers(char **numbers);
-
-//input validation helpers
-int	is_number_helper(char *num);
+int	get_total_numbers(char **inputs);
 
 // free
 void	free_inputs(char **inputs);
 
 //general utils
 long	ft_atol(const char *nptr);
+void	print_list(t_list *list);
+void	do_nth(void *tlist);
+
+//init
+t_numbers	init_numbers(char **inputs);
+t_list	*init_stack(t_numbers numbers);
 
 #endif

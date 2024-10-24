@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taung <taung@student.42singapore.fr>       +#+  +:+       +#+        */
+/*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 17:09:33 by taung             #+#    #+#             */
-/*   Updated: 2024/10/24 14:49:28 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/24 18:49:36 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,20 @@
 
 int	main(int argc, char *argv[])
 {
+	t_list	*stack_a;
+	t_list	*stack_b;
+	t_numbers	numbers;
+
 	if (argc > 1)
 	{
 		if (validation(argv))
 		{
-			//call init
-			//call sort
+			numbers = init_numbers(argv);
+			stack_a = init_stack(numbers);
+			print_list(stack_a);
+			// //call sort
+			ft_lstclear(&stack_a, &do_nth);
+			free(numbers.numbers);
 			printf("inputs OK :)\n");
 		}
 	}

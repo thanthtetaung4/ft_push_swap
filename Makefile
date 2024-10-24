@@ -16,14 +16,15 @@ DISCRETIZE_PATH = ./src/discretization
 VALIDATION_PATH = ./src/input_validation
 FREE_PATH = ./src/free
 UTILS_PATH = ./src/utils
+INIT_PATH = ./src/init
 
 # Source Files
 SRC = ./src/main.c $(VALIDATION_PATH)/input_validation.c $(VALIDATION_PATH)/input_validation_utils.c \
-		$(VALIDATION_PATH)/input_validation_helpers.c $(UTILS_PATH)/general_utils.c \
-		$(FREE_PATH)/ft_free.c
+		$(UTILS_PATH)/general_utils.c \
+		$(FREE_PATH)/ft_free.c $(INIT_PATH)/init.c
 
 TEST_SRC = ./src/test/test.c $(VALIDATION_PATH)/input_validation_utils.c \
-			$(FREE_PATH)/ft_free.c
+			$(FREE_PATH)/ft_free.c $(INIT_PATH)/init.c $(UTILS_PATH)/general_utils.c
 
 # Object Files
 OBJ = $(SRC:.c=.o)

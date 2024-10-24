@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   general_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taung <taung@student.42singapore.fr>       +#+  +:+       +#+        */
+/*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 23:57:58 by taung             #+#    #+#             */
-/*   Updated: 2024/10/23 23:58:31 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/24 18:25:54 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,20 @@ long	ft_atol(const char *nptr)
 	if (sign == '-')
 		r = r * -1;
 	return (r);
+}
+
+void	print_list(t_list *list)
+{
+	while (list)
+	{
+		printf("%d\n", *((int *)list->content));
+		list = list->next;
+	}
+}
+
+void	do_nth(void *tlist)
+{
+	if(tlist || !tlist)
+		return;
+	return;
 }

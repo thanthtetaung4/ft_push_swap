@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_validation_utils.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taung <taung@student.42singapore.fr>       +#+  +:+       +#+        */
+/*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 21:32:28 by taung             #+#    #+#             */
-/*   Updated: 2024/10/24 14:51:56 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/24 17:20:10 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ int len_numbers(char **numbers)
 	}
 	return (i);
 }
-char**	get_all_numbers(char **inputs)
+
+int	get_total_numbers(char **inputs)
 {
-	int i;
-	int len;
-	char **temp;
-	char **all_numbers;
+	int		i;
+	int		len;
+	char	**temp;
 
 	i = 1;
 	len = 0;
@@ -39,7 +39,18 @@ char**	get_all_numbers(char **inputs)
 		free_inputs(temp);
 		i++;
 	}
-	// free(temp);
+	return len;
+}
+
+char**	get_all_numbers(char **inputs)
+{
+	int i;
+	int len;
+	char **temp;
+	char **all_numbers;
+
+	i = 1;
+	len = get_total_numbers(inputs);
 	all_numbers = malloc(sizeof(char *) * (len + 1));
 	if (!all_numbers)
 		return NULL;

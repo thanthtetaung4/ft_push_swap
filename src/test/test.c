@@ -1,61 +1,38 @@
-#include <stdio.h>
-
 #include "../../header/push_swap.h"
 
-int	test_duplicate_helper(char **inputs, char *numb, int index_i, int index_j)
+int main(int argc, char **argv)
 {
-	int		i;
-	int		j;
-	char**	numbers;
+	t_list	*list;
+	// t_list	*node1;
+	// t_list	*node2;
+	// t_list	*node3;
 
-	i = index_i;
-	while (inputs[i])
-	{
-		j = 0;
-		numbers = ft_split((const char*)inputs[i], ' ');
-		if (len_numbers(numbers) > 1)
-			j = index_j + 1;
-		while (numbers[j])
-		{
-			printf("inside is_duplicate numb: %s \t & j: %d\n",numbers[j],j);
-			if(ft_atoi(numbers[j]) - ft_atoi(numb) == 0)
-				return (0);
-			j++;
-		}
-		free_inputs(numbers);
-		numbers = NULL;
-		i++;
-	}
-	printf("%s \t is validated\n",numb);
-	return (1);
-}
+	list = NULL;
+	/*
+	// Create nodes
+	node1 = ft_lstnew(ft_strdup("Hello")); // strdup() allocates memory and copies the string
+    node2 = ft_lstnew(ft_strdup("World"));
+    node3 = ft_lstnew(ft_strdup("42"));
+	// Add nodes to the list
+	ft_lstadd_front(&list, node1); // list = ["Hello"]
+	ft_lstadd_front(&list, node2); // list = ["Hello", "World"]
+	ft_lstadd_front(&list, node3); // list = ["Hello", "World", "42"]
+	// Print list contents
+	print_list(list); // Output: Hello World 42
+	// Free the list
+	ft_lstclear(&list, &free);
+	*/
 
-int	test_is_duplicate(char **inputs)
-{
-	int	i;
-	int	j;
-	char **numbers;
+	t_numbers	numbers = init_numbers(argv);
+	// int len = get_total_numbers(argv);
+	// for (size_t i = 0; i < numbers.len; i++)
+	// {
+	// 	printf("%d\n",numbers.numbers[i]);
+	// }
 
-	i = 1;
-	while(inputs[i])
-	{
-		j = 0;
-		numbers = ft_split((const char*)inputs, ' ');
-		while (numbers[j])
-		{
-			if (!(test_duplicate_helper(inputs,numbers[j],i,j)))
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return (1);
-}
-int	main(int argc, char **argv)
-{
-	if(test_is_duplicate(argv))
-		printf("NO DUPLI\n");
-	else
-		printf("DUPLICATES\n");
-
+	list = init_stack(numbers);
+	print_list(list);
+	ft_lstclear(&list, &do_nth);
+	free(numbers.numbers);
+	return (0);
 }
