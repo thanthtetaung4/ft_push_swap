@@ -41,6 +41,7 @@ int	is_number(char *number);
 int	is_limit(char *number);
 int	is_duplicate(char **inputs);
 int	duplicate_helper(char **inputs, int i);
+char **collect_numbers(char **inputs);
 // int	duplicate_checker(char **inputs, char *numb, int index_i, int index_j);
 int	len_numbers(char **numbers);
 

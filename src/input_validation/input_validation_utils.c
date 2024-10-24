@@ -6,77 +6,74 @@
 /*   By: taung <taung@student.42singapore.fr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 21:32:28 by taung             #+#    #+#             */
-/*   Updated: 2024/10/24 01:26:38 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/24 14:51:56 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header/push_swap.h"
 
-int	len_numbers(char **numbers)
+int len_numbers(char **numbers)
 {
-	int	i;
+	int i;
 
 	i = 0;
-	while(numbers[i])
+	while (numbers[i])
 	{
 		i++;
 	}
 	return (i);
 }
-
-int	duplicate_checker(char **inputs, char *numb, int index_i, int index_j)
+char**	get_all_numbers(char **inputs)
 {
-	int		i;
-	int		j;
-	char**	numbers;
+	int i;
+	int len;
+	char **temp;
+	char **all_numbers;
 
-	i = index_i;
+	i = 1;
+	len = 0;
 	while (inputs[i])
 	{
-		j = 0;
-		numbers = ft_split((const char*)inputs[i], ' ');
-		if (len_numbers(numbers) > 1)
-			j = index_j + 1;
-		while (numbers[j])
-		{
-			printf("inside is_duplicate numb: %s \t & j: %d\n",numbers[j],j);
-			if(ft_atoi(numbers[j]) - ft_atoi(numb) == 0)
-				return (0);
-			j++;
-		}
-		free_inputs(numbers);
-		numbers = NULL;
+		temp = ft_split(inputs[i], ' ');
+		len += len_numbers(temp);
+		free_inputs(temp);
 		i++;
 	}
-	printf("%s \t is validated\n",numb);
-	return (1);
+	// free(temp);
+	all_numbers = malloc(sizeof(char *) * (len + 1));
+	if (!all_numbers)
+		return NULL;
+	return (all_numbers);
 }
 
-int	duplicate_helper(char **inputs, int i)
+char **collect_numbers(char **inputs)
 {
-	int	j;
-	char **numbers;
+	char **all_numbers;
+	int i = 1;
+	int total_count;
+	char **temp;
+	int j;
 
-	j = 0;
-	numbers = ft_split((const char*)inputs[i], ' ');
-	while (numbers[j])
+	total_count = 0;
+	i = 1;
+	all_numbers = get_all_numbers(inputs);
+	while (inputs[i])
 	{
-		if (len_numbers(numbers) > 1)
+		temp = ft_split(inputs[i], ' ');
+		j = 0;
+		while (temp[j])
 		{
-			if (!duplicate_checker(inputs, numbers[j], i, j))
-				return (0);
+			all_numbers[total_count] = ft_strdup(temp[j]);
+			total_count++;
+			j++;
 		}
-		if (len_numbers(numbers) == 1)
-		{
-			if (!duplicate_checker(inputs, numbers[j], i + 1, j))
-				return (0);
-		}
-		j++;
+		free_inputs(temp);
+		i++;
 	}
-	free_inputs(numbers);
-	numbers = NULL;
-	return (1);
+	all_numbers[total_count] = NULL;
+	return all_numbers;
 }
+
 // #include <limits.h>
 // int	main()
 // {
