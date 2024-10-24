@@ -3,59 +3,39 @@
 /*                                                        :::      ::::::::   */
 /*   ft_discretize.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taung <taung@student.42singapore.fr>       +#+  +:+       +#+        */
+/*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 13:31:44 by taung             #+#    #+#             */
-/*   Updated: 2024/10/07 12:42:12 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/25 04:59:25 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header/push_swap.h"
 
-int	ft_calc_key(int value, ft_inputs *inputs)
+void set_index(t_list **stack_a, int len)
 {
-	int		key;
-	size_t	i;
+	t_list *next;
+	t_list *current_node;
+	int index;
+	int i;
+	int j;
 
 	i = 0;
-	key = 0;
-	while(i < inputs->len)
+	current_node = (*stack_a);
+	while (i < len && current_node)
 	{
-		if (value > inputs->inputs[i])
-			key++;
+		j = 0;
+		index = 0;
+		next = (*stack_a);
+		while (j < len && next)
+		{
+			if (*((int *)(current_node->content)) > *((int *)(next->content)))
+				index++;
+			next = next->next;
+			j++;
+		}
+		current_node->index = index;
+		current_node = current_node->next;
 		i++;
 	}
-
-	return key;
-}
-
-// covert the input array of int to 0,1,2,...,n 0 being the smallest and n being the largest
-int	*ft_discretize(ft_inputs *inputs)
-{
-	int		*keys;
-	size_t	i;
-
-	keys = malloc(sizeof(int) * inputs->len);
-	i = 0;
-	if(!keys)
-		return NULL;
-	while(i < inputs->len)
-	{
-		keys[i] = ft_calc_key(inputs->inputs[i], inputs);
-		i++;
-	}
-
-	return keys;
-}
-
-int main()
-{
-	int user_inputs[5] = {-5,3,2,-1,0};
-
-	ft_inputs *inputs = malloc(sizeof(ft_inputs));
-	inputs->inputs = user_inputs;
-	inputs->len = 5;
-
-	int *keys = ft_discretize(inputs);
-	ft_print_arr(keys,inputs->len);
 }

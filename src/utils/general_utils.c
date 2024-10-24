@@ -6,7 +6,7 @@
 /*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 23:57:58 by taung             #+#    #+#             */
-/*   Updated: 2024/10/24 18:25:54 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/25 04:11:09 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	print_list(t_list *list)
 {
 	while (list)
 	{
-		printf("%d\n", *((int *)list->content));
+		printf("value: %d, index: %d\n", *((int *)list->content),list->index);
 		list = list->next;
 	}
 }

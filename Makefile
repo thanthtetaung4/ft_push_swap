@@ -17,11 +17,16 @@ VALIDATION_PATH = ./src/input_validation
 FREE_PATH = ./src/free
 UTILS_PATH = ./src/utils
 INIT_PATH = ./src/init
-
+SORTING_PATH = ./src/sorting
+OPERATION_PATH = ./src/operations
 # Source Files
 SRC = ./src/main.c $(VALIDATION_PATH)/input_validation.c $(VALIDATION_PATH)/input_validation_utils.c \
-		$(UTILS_PATH)/general_utils.c \
-		$(FREE_PATH)/ft_free.c $(INIT_PATH)/init.c
+		$(UTILS_PATH)/general_utils.c $(DISCRETIZE_PATH)/ft_discretize.c \
+		$(FREE_PATH)/ft_free.c $(INIT_PATH)/init.c \
+		$(SORTING_PATH)/sorting.c $(SORTING_PATH)/sorting_utils.c \
+		$(OPERATION_PATH)/operations_a.c $(OPERATION_PATH)/operations_b.c \
+		$(OPERATION_PATH)/operations_c.c $(SORTING_PATH)/sorting_helpers.c \
+		$(SORTING_PATH)/sorting_methods.c
 
 TEST_SRC = ./src/test/test.c $(VALIDATION_PATH)/input_validation_utils.c \
 			$(FREE_PATH)/ft_free.c $(INIT_PATH)/init.c $(UTILS_PATH)/general_utils.c

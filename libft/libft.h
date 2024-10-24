@@ -6,7 +6,7 @@
 /*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 13:05:55 by taung             #+#    #+#             */
-/*   Updated: 2024/10/05 11:26:45 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/25 04:05:21 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
+	int				index;
 }					t_list;
 
 int		ft_atoi(const char *str);
@@ -107,5 +108,7 @@ t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 t_list	*ft_lstnew(void *content);
+
+int		ft_lstsize(t_list *lst);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 17:09:33 by taung             #+#    #+#             */
-/*   Updated: 2024/10/24 18:49:36 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/25 05:01:12 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,16 @@ int	main(int argc, char *argv[])
 	t_list	*stack_b;
 	t_numbers	numbers;
 
+	stack_b = NULL;
 	if (argc > 1)
 	{
 		if (validation(argv))
 		{
 			numbers = init_numbers(argv);
 			stack_a = init_stack(numbers);
-			print_list(stack_a);
-			// //call sort
+			sort(&stack_a, &stack_b, numbers);
 			ft_lstclear(&stack_a, &do_nth);
 			free(numbers.numbers);
-			printf("inputs OK :)\n");
 		}
 	}
 	else

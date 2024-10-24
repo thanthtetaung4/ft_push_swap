@@ -10,14 +10,8 @@ typedef struct s_numbers
 	int	len;
 }	t_numbers;
 
-//dictionary
-// void	ft_make_dict(int *value, int *key, ft_dict *dict, size_t len);
-// void	ft_print_dict(ft_dict *dict);
-// int		ft_find_value(ft_dict *dict, int key);
-
-// //discretization
-// int	ft_calc_key(int value, ft_inputs *inputs);
-// int	*ft_discretize(ft_inputs *inputs);
+//discretization
+void set_index(t_list **stack_a, int len);
 
 //test utils
 void	ft_print_arr(int *arr, size_t len);
@@ -45,5 +39,39 @@ void	do_nth(void *tlist);
 //init
 t_numbers	init_numbers(char **inputs);
 t_list	*init_stack(t_numbers numbers);
+
+//operations
+void sa(t_list **stack_a);
+void sb(t_list **stack_b);
+void ss(t_list **stack_a, t_list **stack_b);
+void pa(t_list **stack_a, t_list **stack_b);
+void pb(t_list **stack_a, t_list **stack_b);
+void ra(t_list **stack_a);
+void rb(t_list **stack_b);
+void rr(t_list **stack_a, t_list **stack_b);
+void rra(t_list **stack_a);
+void rrb(t_list **stack_b);
+void rrr(t_list **stack_a, t_list **stack_b);
+
+//sorting methods
+void	sort_two(t_list **stack_a);
+void	sort_three(t_list **stack_a, t_list **stack_b);
+void	sort_four(t_list **stack_a, t_list **stack_b);
+void	sort_five(t_list **stack_a, t_list **stack_b);
+void	radix_sort(t_list **stack_a, t_list **stack_b, int len);
+
+//sroting utils
+void sorting_five_helper(t_list **stack_a, t_list **stack_b);
+void sort_condition_five(t_list **stack_a, t_list **stack_b, int *values, int smallest);
+
+//sorting helpers
+void sorting(t_list **stack_a, t_list **stack_b, void(f)(t_list **, t_list **));
+int find_smallest(int *values, int len);
+void sort_four_condition(t_list **stack_a, t_list **stack_b, int *values, int smallest);
+int find_smallest(int *values, int len);
+
+
+//sort
+void	sort(t_list **stack_a, t_list **stack_b, t_numbers numbers);
 
 #endif
