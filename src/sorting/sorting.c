@@ -6,7 +6,7 @@
 /*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 21:34:09 by taung             #+#    #+#             */
-/*   Updated: 2024/10/25 05:04:48 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/25 05:28:39 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	sort(t_list **stack_a, t_list **stack_b, t_numbers numbers)
 			sort_five(stack_a, stack_b);
 		else
 		{
-			set_index(stack_a, numbers.len);
 			radix_sort(stack_a, stack_b,numbers.len);
 		}
 	}
