@@ -6,7 +6,7 @@
 /*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 05:02:20 by taung             #+#    #+#             */
-/*   Updated: 2024/10/25 05:22:34 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/25 19:50:22 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	sort_two(t_list **stack_a)
 	t_list	*temp;
 
 	temp = *stack_a;
-	if(temp->content > temp->next->content)
+	if (temp->content > temp->next->content)
 		sa(stack_a);
 }
 
 void	sort_three(t_list **stack_a, t_list **stack_b)
 {
-	int values[3];
+	int	values[3];
 
 	values[0] = *((int *)(*stack_a)->content);
 	values[1] = *((int *)(*stack_a)->next->content);
@@ -51,7 +51,7 @@ void	sort_three(t_list **stack_a, t_list **stack_b)
 
 void	sort_four(t_list **stack_a, t_list **stack_b)
 {
-	int values[4];
+	int	values[4];
 	int	smallest;
 
 	values[0] = *((int *)(*stack_a)->content);
@@ -64,8 +64,8 @@ void	sort_four(t_list **stack_a, t_list **stack_b)
 
 void	sort_five(t_list **stack_a, t_list **stack_b)
 {
-	int values[5];
-	int smallest;
+	int	values[5];
+	int	smallest;
 
 	values[0] = *((int *)(*stack_a)->content);
 	values[1] = *((int *)(*stack_a)->next->content);
@@ -73,15 +73,14 @@ void	sort_five(t_list **stack_a, t_list **stack_b)
 	values[3] = *((int *)(*stack_a)->next->next->next->content);
 	values[4] = *((int *)(*stack_a)->next->next->next->next->content);
 	smallest = find_smallest(values, 5);
-	// ft_printf("smallest : %i\n", smallest);
 	sort_condition_five(stack_a, stack_b, values, smallest);
 }
 
 void	radix_sort(t_list **stack_a, t_list **stack_b, int len)
 {
-	int bits;
-	int i;
-	int j;
+	int	bits;
+	int	i;
+	int	j;
 
 	bits = 0;
 	i = 0;

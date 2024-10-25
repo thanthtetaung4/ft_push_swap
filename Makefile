@@ -1,11 +1,10 @@
 # Project Names
 NAME = push_swap
-TEST = test_o
 
 # Compiler and Flags
 CC = cc
-# CFLAGS = -Wall -Wextra -Werror
-CFLAGS =
+CFLAGS = -Wall -Wextra -Werror
+
 
 # Libft Paths and Files
 LIBFT_PATH = ./libft
@@ -28,9 +27,6 @@ SRC = ./src/main.c $(VALIDATION_PATH)/input_validation.c $(VALIDATION_PATH)/inpu
 		$(OPERATION_PATH)/operations_c.c $(SORTING_PATH)/sorting_helpers.c \
 		$(SORTING_PATH)/sorting_methods.c
 
-TEST_SRC = ./src/test/test.c $(VALIDATION_PATH)/input_validation_utils.c \
-			$(FREE_PATH)/ft_free.c $(INIT_PATH)/init.c $(UTILS_PATH)/general_utils.c
-
 # Object Files
 OBJ = $(SRC:.c=.o)
 TEST_OBJ = $(TEST_SRC:.c=.o)
@@ -38,13 +34,6 @@ TEST_OBJ = $(TEST_SRC:.c=.o)
 # All Target
 all: $(NAME)
 	@echo "\033[32m[ $(NAME) is ready for use]\033[0m"
-
-test: $(TEST)
-	@echo "\033[32m[ $(TEST) is ready for use]\033[0m"
-
-#TEST Target
-$(TEST): $(TEST_OBJ) $(LIBFT)
-	$(CC) $(CFLAGS) -o $(TEST) $(TEST_OBJ) $(LIBFT)
 
 # NAME Target
 $(NAME): $(OBJ) $(LIBFT)

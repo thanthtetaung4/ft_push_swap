@@ -6,15 +6,15 @@
 /*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 21:32:05 by taung             #+#    #+#             */
-/*   Updated: 2024/10/24 18:44:29 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/25 20:06:03 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../header/push_swap.h"
 
-int is_number(char *num)
+int	is_number(char *num)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (num[0] == '-' || num[0] == '+')
@@ -28,9 +28,9 @@ int is_number(char *num)
 	return (1);
 }
 
-int is_limit(char *num)
+int	is_limit(char *num)
 {
-	long numb;
+	long	numb;
 
 	numb = ft_atol((const char *)num);
 	if (numb >= -2147483648 && numb <= 2147483647)
@@ -40,11 +40,11 @@ int is_limit(char *num)
 	return (0);
 }
 
-int validation_helper(char **inputs, int (*validation_func)(char *))
+int	validation_helper(char **inputs, int (*validation_func)(char *))
 {
-	int i;
-	int j;
-	char **numbers;
+	int		i;
+	int		j;
+	char	**numbers;
 
 	i = 1;
 	while (inputs[i])
@@ -64,7 +64,7 @@ int validation_helper(char **inputs, int (*validation_func)(char *))
 	return (1);
 }
 
-int is_duplicate(char **inputs)
+int	is_duplicate(char **inputs)
 {
 	char	**all_numbers;
 	int		i;
@@ -90,7 +90,7 @@ int is_duplicate(char **inputs)
 	return (1);
 }
 
-int validation(char **inputs)
+int	validation(char **inputs)
 {
 	if (!validation_helper(inputs, &is_number))
 	{

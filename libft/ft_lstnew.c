@@ -6,7 +6,7 @@
 /*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/05 11:30:48 by taung             #+#    #+#             */
-/*   Updated: 2024/10/25 03:56:02 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/25 20:24:25 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ t_list
 {
 	t_list	*elt;
 
-	if (!(elt = (t_list*)malloc(sizeof(*elt))))
+	elt = (t_list *)malloc(sizeof(*elt));
+	if (!(elt))
 		return (NULL);
 	elt->content = content;
 	elt->next = NULL;
