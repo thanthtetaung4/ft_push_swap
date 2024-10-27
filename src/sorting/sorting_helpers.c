@@ -6,7 +6,7 @@
 /*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 00:46:30 by taung             #+#    #+#             */
-/*   Updated: 2024/10/27 19:17:38 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/27 20:04:21 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,7 @@ int	is_sorted(t_list **lst)
 	while(temp->next)
 	{
 		if(*((int *)temp->content) > *((int *)temp->next->content))
-		{
-			return (0);}
+			return (0);
 		temp = temp->next;
 	}
 	return (1);
