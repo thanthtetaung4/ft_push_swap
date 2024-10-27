@@ -6,7 +6,7 @@
 /*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 00:46:30 by taung             #+#    #+#             */
-/*   Updated: 2024/10/27 20:04:21 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/27 20:13:01 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ void	sort_four_condition(t_list **stack_a, t_list **stack_b,
 
 int	is_sorted(t_list **lst)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = *(lst);
-	while(temp->next)
+	while (temp->next)
 	{
-		if(*((int *)temp->content) > *((int *)temp->next->content))
+		if (*((int *)temp->content) > *((int *)temp->next->content))
 			return (0);
 		temp = temp->next;
 	}
