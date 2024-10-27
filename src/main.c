@@ -6,7 +6,7 @@
 /*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 17:09:33 by taung             #+#    #+#             */
-/*   Updated: 2024/10/27 18:09:52 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/27 19:19:14 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	main(int argc, char *argv[])
 			numbers = init_numbers(argv);
 			stack_a = init_stack(numbers);
 			set_index(&stack_a, numbers.len);
-			sort(&stack_a, &stack_b, numbers);
+			if(is_sorted(&stack_a) == 0)
+				sort(&stack_a, &stack_b, numbers);
 			ft_lstclear(&stack_a, &do_nth);
 			free(numbers.numbers);
 		}

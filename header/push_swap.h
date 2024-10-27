@@ -6,7 +6,7 @@
 /*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 19:48:34 by taung             #+#    #+#             */
-/*   Updated: 2024/10/27 18:48:23 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/27 19:10:28 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ char		**collect_numbers(char **inputs);
 int			len_numbers(char **numbers);
 int			get_total_numbers(char **inputs);
 int			is_not_empty(char **inputs);
+int			is_sorted(t_list **lst);
 
 // free
 void		free_inputs(char **inputs);
