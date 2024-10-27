@@ -6,7 +6,7 @@
 /*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 21:32:28 by taung             #+#    #+#             */
-/*   Updated: 2024/10/25 20:21:54 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/27 18:49:01 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,20 @@ char	**collect_numbers(char **inputs)
 	}
 	all_numbers[total_count] = NULL;
 	return (all_numbers);
+}
+
+int	is_not_empty(char **inputs)
+{
+	int	i;
+
+	i = 1;
+	while (inputs[i])
+	{
+		if (ft_strlen(inputs[i]) == 0)
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
 // #include <limits.h>

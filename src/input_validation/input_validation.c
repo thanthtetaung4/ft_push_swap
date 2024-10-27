@@ -6,7 +6,7 @@
 /*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 21:32:05 by taung             #+#    #+#             */
-/*   Updated: 2024/10/27 16:37:21 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/27 18:49:20 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,11 @@ int	validation(char **inputs)
 		return (0);
 	}
 	if (!is_duplicate(inputs))
+	{
+		ft_putstr_fd("Error\n", 2);
+		return (0);
+	}
+	if (!is_not_empty(inputs))
 	{
 		ft_putstr_fd("Error\n", 2);
 		return (0);
