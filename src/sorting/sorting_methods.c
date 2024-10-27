@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sorting_methods.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
+/*   By: tha <tha@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/25 05:02:20 by taung             #+#    #+#             */
-/*   Updated: 2024/10/25 19:50:22 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/28 00:29:13 by tha              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	sort_two(t_list **stack_a)
 	t_list	*temp;
 
 	temp = *stack_a;
-	if (temp->content > temp->next->content)
+	if (*((int *)temp->content) > *((int *)temp->next->content))
 		sa(stack_a);
 }
 
