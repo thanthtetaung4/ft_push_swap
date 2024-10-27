@@ -6,7 +6,7 @@
 /*   By: taung <taung@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/20 21:32:05 by taung             #+#    #+#             */
-/*   Updated: 2024/10/25 20:06:03 by taung            ###   ########.fr       */
+/*   Updated: 2024/10/27 16:37:21 by taung            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,17 +94,17 @@ int	validation(char **inputs)
 {
 	if (!validation_helper(inputs, &is_number))
 	{
-		ft_putstr_fd("Error !number\n", 2);
+		ft_putstr_fd("Error\n", 2);
 		return (0);
 	}
 	if (!validation_helper(inputs, &is_limit))
 	{
-		ft_putstr_fd("Error limit over\n", 2);
+		ft_putstr_fd("Error\n", 2);
 		return (0);
 	}
 	if (!is_duplicate(inputs))
 	{
-		ft_putstr_fd("Error duplicate inputs\n", 2);
+		ft_putstr_fd("Error\n", 2);
 		return (0);
 	}
 	return (1);
